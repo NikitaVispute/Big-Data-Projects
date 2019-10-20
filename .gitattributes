@@ -1,2 +1,1 @@
-*.xslt linguist-detectable=false
-*.css linguist-detectable=false
+*.scala linguist-detectable=true
