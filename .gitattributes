@@ -1,1 +1,2 @@
-*.xtsl linguist-detectable=false
+*.xslt linguist-detectable=false
+*.css linguist-detectable=false
