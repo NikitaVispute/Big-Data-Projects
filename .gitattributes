@@ -1,1 +1,3 @@
 *.scala linguist-detectable=true
+*.xslt linguist-language=Scala
+*.scala linguist-detectable= true
