@@ -1,3 +1,4 @@
 *.scala linguist-detectable=true
-*.xslt linguist-language=Scala
+*.xslt linguist-language=scala
+*.css linguist-language=scala
 *.scala linguist-detectable= true
