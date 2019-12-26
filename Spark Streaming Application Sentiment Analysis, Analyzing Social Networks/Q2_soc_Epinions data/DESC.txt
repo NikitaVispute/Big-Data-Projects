@@ -1,0 +1,9 @@
+This is a who-trust-whom online social network of a a general consumer review site Epinions.com. Members of the site can decide whether to ''trust'' each other. All the trust relationships interact and form the Web of Trust which is then combined with review ratings to determine which reviews are shown to the user.
+
+It is a directed graph (each unordered pair of nodes is saved once): Q2_soc_Epinions.txt 
+
+# Directed Epinions social network
+# Nodes: 75879 
+# Edges: 508837
+# First column	: FromNode 
+# Second column	: ToNode

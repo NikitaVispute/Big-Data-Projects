@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="TwitterSentimentAnalysis,assign3,twitter-sentiment-analysis-master_9434" />
+  </component>
+</project>
