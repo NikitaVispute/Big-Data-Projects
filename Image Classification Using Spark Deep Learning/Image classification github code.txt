@@ -1,0 +1,50 @@
+sc._jsc.hadoopConfiguration().set("fs.s3n.awsAccessKeyId", "insert your key")
+sc._jsc.hadoopConfiguration().set("fs.s3n.awsSecretAccessKey", "insert your key")
+
+#spark-deep-learning:1.5.0-spark2.4-s_2.11 library installed from Maven Spark packages before importing
+#sparkdl, keras, tensorflow libraries installed from Pypi before importing
+import sparkdl
+
+from pyspark.sql import functions as F
+from pyspark.sql.functions import lit
+
+from pyspark.ml.image import ImageSchema
+## getting images from s3 ######  Train
+cats_df = ImageSchema.readImages("s3://6350assign2/dataset/training_set/cats") //insert appropriate path
+dogs_df = ImageSchema.readImages("s3://6350assign2/dataset/training_set/dogs") //insert appropriate path
+
+cats_df.first()
+
+dogs_df = dogs_df.withColumn("label", lit(0))
+cats_df = cats_df.withColumn("label", lit(1))
+train_df = cats_df.union(dogs_df)
+
+# preparing test data in the same way as train data
+cats_df = ImageSchema.readImages("s3://6350assign2/dataset/test_set/cats") //insert appropriate path
+dogs_df = ImageSchema.readImages("s3://6350assign2/dataset/test_set/dogs") //insert appropriate path
+
+dogs_df = dogs_df.withColumn("label", lit(0))
+cats_df = cats_df.withColumn("label", lit(1))
+
+test_df = cats_df.union(dogs_df)
+
+test_df.count()
+
+from pyspark.ml.classification import LogisticRegression
+from pyspark.ml.evaluation import MulticlassClassificationEvaluator
+from pyspark.ml import Pipeline
+from sparkdl import DeepImageFeaturizer
+
+# using sparkdl for features and model
+featurizer = DeepImageFeaturizer(inputCol="image", outputCol="features", modelName="InceptionV3")
+lr = LogisticRegression(maxIter=5, regParam=0.9, elasticNetParam=0.3, labelCol="label")
+p = Pipeline(stages=[featurizer, lr])
+model = p.fit(train_df.limit(1000))    # train_df is a dataset of images and labels
+
+# Inspect test set error
+df = model.transform(test_df.limit(500)).select("image", "prediction",  "label")
+predictionAndLabels = df.select("prediction", "label")
+evaluator = MulticlassClassificationEvaluator(metricName="accuracy")
+print("Accuracy = " + str(evaluator.evaluate(predictionAndLabels)))
+Accuracy = 1.0
+df.show()
