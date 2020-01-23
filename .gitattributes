@@ -1,3 +1,3 @@
 *.scala linguist-detectable=true
-*.XSLT linguist-vendored
+*.xsl linguist-vendored
 *.css linguist-vendored
