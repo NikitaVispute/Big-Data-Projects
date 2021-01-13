@@ -1,4 +1,8 @@
-Spark Streaming with Twitter and Kafka
+# Spark Streaming Application, Analyzing Social Networks			 	   
+
+**Technology: Kafka, Zookeeper, Elastic Search, Kibana, Logstash, Spark GraphX, Scala, AWS S3/EMR.<br> 
+•	Created a Spark Streaming application that continuously reads data from Twitter about a topic and performed sentiment analysis on them and viewed the results as a visualization pie chart.<br>
+•	Used Spark GraphX to analyze Epinions Social Network data from SNAP repository. Constructed a GraphX graph and run some queries like in-degrees, out-degrees, page-rank algorithm, components algorithm and triangle counts algorithm to analyze the data.<br>**
 
 In this part, you will create a Spark Streaming application that will continuously read data from
 Twitter about a topic. These Twitter feeds will be analyzed for their sentiment, and then analyzed
