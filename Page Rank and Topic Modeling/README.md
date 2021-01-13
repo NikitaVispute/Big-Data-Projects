@@ -1,6 +1,12 @@
-# Page Rank for Airports data and Topic Modeling for Classic Book 
+# Page Rank for Airports data and Topic Modeling for Classics Book 
 
-1 PageRank for Airports<br>
+**Technology: Spark in Scala, PySpark, AWS, Databricks.**
+
+**Implemented a Scala class to compute the page rank of each node (using airport data: origin and destination) based on number of inlinks and outlinks using MapReduce and executed it using AWS S3 & AWS EMR cluster.**
+
+**Implemented a Scala class to compute the top 5 topics in a classic book from www.gutenberg.org using the LDA model for topic modeling and executed it using AWS S3 & AWS EMR cluster.**
+
+**1 PageRank for Airports**<br>
 Dataset:<br>
 1. The dataset for this project will be a graph that shows connections between various airports. This
 data is available at:Bureau of Transportation website at https://www.transtats.bts.gov/DL_SelectFields.asp?Table_ID=236 and
@@ -22,7 +28,7 @@ There may be multiple connections between two airports, and you should consider 
 5. Your output should be stored in the location specified by the third parameter. The output should contain the airport code and its PageRank, and data should be sorted by the PageRank in a descending order. All files should be loaded on AWS S3.<br>
 
 
-2 Topic Modeling from Classic Books<br>
+**2 Topic Modeling from Classics Books**<br>
 Choose one of the classic books from the Gutenberg project http://www.gutenberg.org and perform topic analysis on it. You will then output the 5 most important topics from the book and list them.<br>
 The program should take the following arguments:<br>
     1. Path of the input file<br>
