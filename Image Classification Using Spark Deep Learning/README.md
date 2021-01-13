@@ -1,4 +1,7 @@
-Image Processing Using Spark Deep Learning
+# Image Processing Using Spark Deep Learning
+**Technology: PySpark, AWS, Databricks.**
+
+**Using Apache Spark in python (PySpark in Databricks), classified cats & dogs image dataset using transfer learning Spark Deep Learning pipelines.**
 
 1. Execute the code cell by cell in a dataricks notebook.
 
