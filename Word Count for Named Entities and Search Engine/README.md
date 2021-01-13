@@ -1,10 +1,12 @@
 # Word Count for Named Entities and Search Engine for Movies Data
 
-Technology: Spark in Scala.<br>
-•	Pre-processed a large text file from gutenberg.org website and then implemented a mapreduce function to the data to count the most frequent named entities in the text. <br>
-•	Pre-processed the movie summary dataset from Carnegie Movie Summary Corpus and built a search engine for the data using the tf-idf technique by MapReduce for each document pair. The query is of two types: single term or multiple terms and this would display the appropriate movies when entered in the search engine.<br>
+**Technology: Spark in Scala.**<br>
 
-1 WordCount for Named Entities<br>
+**•	Pre-processed a large text file from gutenberg.org website and then implemented a mapreduce function to the data to count the most frequent named entities in the text.** <br>
+
+**•	Pre-processed the movie summary dataset from Carnegie Movie Summary Corpus and built a search engine for the data using the tf-idf technique by MapReduce for each document pair. The query is of two types: single term or multiple terms and this would display the appropriate movies when entered in the search engine.**<br>
+
+**1 WordCount for Named Entities**<br>
 
 Compute the word frequency for named entities in a large file. <br>
 Steps <br>
@@ -13,7 +15,7 @@ Steps <br>
 3. The output from the map task should be in the form of (key, Value) where key is the named entity, and value is its count (i.e. once every time it occurs)<br>
 4. The output from the reducer should be sorted in descending order of count. That is, the named entity that is most frequent should appear at the top.<br>
 
-2 Search Engine for Movie Plot Summaries<br>
+**2 Search Engine for Movie Plot Summaries**<br>
 
 Work with a dataset of movie plot summaries that is available from the Carnegie Movie Summary Corpus site. Building a search engine for the plot summaries that are available in the file “plot summaries.txt” using the tf-idf technique.<br>
 Implemented using Scala/PySpark code that can run on a Databricks cluster.<br>
