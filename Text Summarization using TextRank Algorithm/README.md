@@ -1,3 +1,9 @@
+# Text Summarization Using TextRank Algorithm			
+
+**Technology: PySpark, Databricks.<br>
+• Implemented the TextRank Algorithm on the BBC news Summary dataset from Kaggle using PySpark.<br> 
+• Evaluated the results of our summarization with the given data using F1 measure, precision and recall metrics and also wrote a research paper on the same.<br>**
+
 For our project Text Summarization Using TextRank algorithm we have used the dataset: BBC-News Summary from the Kaggle website: https://www.kaggle.com/pariza/bbc-news-summary
 
 The input dataset has been loaded on AWS S3 at 
